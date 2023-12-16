@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheets/createexpense.css">
+</head>
+<body>
+   
+  <header>
+    <h1>Expense Tracker</h1>
+  </header>
+
+  <div class="container">
+
+    <form class="expense-form" method="post">
+      <label for="amount">Amount:</label>
+      <input type="text" id="amount" name="amount" required>
+
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category" required>
+
+      <label for="remark">Remark:</label>
+      <input type="text" id="remark" name="remark" required>
+
+      <label for="paymentMode">Payment Mode:</label>
+      <select id="paymentMode" name="payment_method" required>
+        <option value="creditCard">Credit Card</option>
+        <option value="debitCard">Debit Card</option>
+        <option value="cash">Cash</option>
+      </select>
+
+      <button type="submit">Add Expense</button>
+    </form>
+
+  </div>
+</body>
+</html>

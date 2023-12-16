@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/profile.css">
+    <title>profile</title>
+</head>
+<body>
+  
+
+  <header>
+    <h1>Expense Tracker</h1>
+    <p>Welcome, <span id="username"><%= admin.username%></span>!</p>
+    <hr>
+     <h1>Total expense: <%= expenses.reduce((ac,cv) => ac+cv.amount, 0)%></h1>
+  </header>
+
+  <div class="container">
+    <a href="/createexpense" class="add-expense-button">add expense</a>
+    <a href="/sign-out" class="logout-button">logout</a>
+
+    <% expenses.forEach((e)=> { %>
+
+   
+    <div class="expense-card">
+      <div class="expense-details">
+        <h3>Amount: <%= e.amount %></h3>
+        <p>Category: <%= e.category %></p>
+        <p>Remark: <%= e.remark %></p>
+        <p>Payment Mode: <%= e.payment_method %></p>
+      </div>
+      <div class="buttons">
+       <a href="/delete/<%=e._id %>"> delete</a>
+       <a href="/update/<%=e._id%>">update</a>
+      </div>
+    </div>
+    <% }) %>
+
+    <!-- More expense cards can be added here -->
+    
+  </div>
+
+</body>
+</html>
