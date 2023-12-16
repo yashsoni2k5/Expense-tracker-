@@ -11,7 +11,7 @@ passport.use(new Localstrategy(user.authenticate()));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 router.get('/sign-up', function(req, res, next) {
   res.redirect('/register');
